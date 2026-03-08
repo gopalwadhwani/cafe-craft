@@ -1,0 +1,261 @@
+/* ===========================
+   Menu Section Styles
+   =========================== */
+.menu {
+    background: var(--color-cream-white);
+}
+
+/* Filter Buttons */
+.menu__filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.menu__filter-btn {
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--color-white);
+    color: var(--color-text-secondary);
+    border: 1.5px solid transparent;
+    transition: all var(--transition-base);
+    letter-spacing: 0.3px;
+}
+
+.menu__filter-btn:hover {
+    color: var(--color-coffee-brown);
+    border-color: var(--color-latte-beige);
+}
+
+.menu__filter-btn.active {
+    background: var(--color-coffee-brown);
+    color: var(--color-white);
+    box-shadow: 0 4px 16px rgba(111, 78, 55, 0.25);
+}
+
+/* Menu Grid */
+.menu__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+/* Menu Card */
+.menu-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.menu-card__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.menu-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.menu-card:hover .menu-card__image-wrapper img {
+    transform: scale(1.08);
+}
+
+.menu-card__category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 14px;
+    background: rgba(44, 24, 16, 0.75);
+    color: var(--color-accent-gold);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
+}
+
+.menu-card__content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card__name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-dark-brown);
+    margin-bottom: 8px;
+}
+
+.menu-card__description {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+.menu-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-card__price {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-coffee-brown);
+}
+
+.menu-card__add-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--color-cream-white);
+    color: var(--color-coffee-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all var(--transition-base);
+}
+
+.menu-card__add-btn:hover {
+    background: var(--color-coffee-brown);
+    color: var(--color-white);
+    transform: rotate(90deg);
+}
+
+/* Special Offers */
+.special-offers {
+    background: var(--color-dark-brown);
+    position: relative;
+    overflow: hidden;
+}
+
+.special-offers::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.special-offers .section-subtitle {
+    color: var(--color-accent-gold);
+}
+
+.special-offers .section-title {
+    color: var(--color-white);
+}
+
+.special-offers .section-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.offers__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+.offer-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 36px 28px;
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.offer-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.offer-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.offer-card__text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.offer-card__badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(201, 169, 110, 0.15);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent-gold);
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu__grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .offers__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu__filters {
+        gap: 8px;
+    }
+
+    .menu__filter-btn {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+    }
+}
