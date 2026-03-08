@@ -37,7 +37,7 @@ const Menu = () => {
                 </div>
 
                 <div className="menu__grid">
-                    {filteredItems.map((item, index) => (
+                    {filteredItems.map((item) => (
                         <MenuCard key={item.id} item={item} />
                     ))}
                 </div>

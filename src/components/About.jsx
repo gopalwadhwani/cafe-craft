@@ -1,11 +1,8 @@
+import aboutStatsData from '../data/aboutStatsData';
 import '../styles/about.css';
 
 const About = () => {
-    const stats = [
-        { number: '10+', label: 'Years Experience' },
-        { number: '50+', label: 'Coffee Varieties' },
-        { number: '5000+', label: 'Happy Customers' },
-    ];
+    const stats = aboutStatsData;
 
     return (
         <section className="about section-padding" id="about">

@@ -1,13 +1,16 @@
+import { Link, useLocation } from 'react-router-dom';
+import useScrollTo from '../hooks/useScrollTo';
 import '../styles/footer.css';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const location = useLocation();
+    const scrollTo = useScrollTo();
+    const isHome = location.pathname === '/';
 
     const handleClick = (e, targetId) => {
-        e.preventDefault();
-        const element = document.getElementById(targetId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+        if (isHome) {
+            scrollTo(e, targetId);
         }
     };
 
@@ -44,11 +47,23 @@ const Footer = () => {
                     <div>
                         <h4 className="footer__column-title">Quick Links</h4>
                         <div className="footer__links">
-                            <a href="#home" className="footer__link" onClick={(e) => handleClick(e, 'home')}>Home</a>
-                            <a href="#menu" className="footer__link" onClick={(e) => handleClick(e, 'menu')}>Our Menu</a>
-                            <a href="#about" className="footer__link" onClick={(e) => handleClick(e, 'about')}>About Us</a>
-                            <a href="#gallery" className="footer__link" onClick={(e) => handleClick(e, 'gallery')}>Gallery</a>
-                            <a href="#reservation" className="footer__link" onClick={(e) => handleClick(e, 'reservation')}>Reservations</a>
+                            {isHome ? (
+                                <>
+                                    <a href="#home" className="footer__link" onClick={(e) => handleClick(e, 'home')}>Home</a>
+                                    <a href="#menu" className="footer__link" onClick={(e) => handleClick(e, 'menu')}>Our Menu</a>
+                                    <a href="#about" className="footer__link" onClick={(e) => handleClick(e, 'about')}>About Us</a>
+                                    <a href="#gallery" className="footer__link" onClick={(e) => handleClick(e, 'gallery')}>Gallery</a>
+                                    <a href="#reservation" className="footer__link" onClick={(e) => handleClick(e, 'reservation')}>Reservations</a>
+                                </>
+                            ) : (
+                                <>
+                                    <Link to="/" className="footer__link">Home</Link>
+                                    <Link to="/menu" className="footer__link">Our Menu</Link>
+                                    <Link to="/about" className="footer__link">About Us</Link>
+                                    <Link to="/#gallery" className="footer__link">Gallery</Link>
+                                    <Link to="/reservations" className="footer__link">Reservations</Link>
+                                </>
+                            )}
                         </div>
                     </div>
 

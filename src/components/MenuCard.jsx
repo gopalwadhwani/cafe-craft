@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const MenuCard = ({ item }) => {
     return (
         <div className="menu-card" data-aos="fade-up">
@@ -17,6 +19,17 @@ const MenuCard = ({ item }) => {
             </div>
         </div>
     );
+};
+
+MenuCard.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        category: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default MenuCard;

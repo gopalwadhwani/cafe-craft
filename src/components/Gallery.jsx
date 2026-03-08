@@ -1,13 +1,8 @@
+import galleryData from '../data/galleryData';
 import '../styles/gallery.css';
 
 const Gallery = () => {
-    const galleryItems = [
-        { src: '/images/gallery-interior.png', caption: 'Our Cozy Interior' },
-        { src: '/images/gallery-coffee.png', caption: 'Artisan Coffee' },
-        { src: '/images/gallery-pastries.png', caption: 'Fresh Pastries' },
-        { src: '/images/gallery-beans.png', caption: 'Premium Beans' },
-        { src: '/images/about-barista.png', caption: 'Expert Baristas' },
-    ];
+    const galleryItems = galleryData;
 
     return (
         <section className="gallery section-padding" id="gallery">

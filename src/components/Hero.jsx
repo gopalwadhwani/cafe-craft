@@ -1,14 +1,7 @@
+import { Link } from 'react-router-dom';
 import '../styles/hero.css';
 
 const Hero = () => {
-    const handleClick = (e, targetId) => {
-        e.preventDefault();
-        const element = document.getElementById(targetId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <section className="hero" id="home">
             <div className="hero__background">
@@ -27,12 +20,12 @@ const Hero = () => {
                     Every cup tells a story of passion, precision, and premium quality.
                 </p>
                 <div className="hero__buttons">
-                    <a href="#menu" className="btn btn-primary" onClick={(e) => handleClick(e, 'menu')}>
+                    <Link to="/menu" className="btn btn-primary">
                         <i className="fas fa-coffee"></i> View Menu
-                    </a>
-                    <a href="#reservation" className="btn btn-secondary" onClick={(e) => handleClick(e, 'reservation')}>
+                    </Link>
+                    <Link to="/reservations" className="btn btn-secondary">
                         <i className="far fa-calendar-alt"></i> Reserve Table
-                    </a>
+                    </Link>
                 </div>
             </div>
 
